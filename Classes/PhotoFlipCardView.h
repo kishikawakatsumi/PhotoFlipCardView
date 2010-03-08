@@ -20,6 +20,7 @@
         unsigned int dataSourceNumberOfImages:1;
         unsigned int dataSourceThumbnailAtIndex:1;
         unsigned int dataSourceImageAtIndex:1;
+        unsigned int delegateDidSelectThumnailAtIndex:1;
     } flags;
 }
 

@@ -39,18 +39,21 @@
 - (void)setDataSource:(id)d {
     dataSource = d;
     if ([dataSource respondsToSelector:@selector(photoFlipCardViewNumberOfImages:)]) {
-        flags.dataSourceNumberOfImages = 1;
+        flags.dataSourceNumberOfImages = YES;
     }
     if ([dataSource respondsToSelector:@selector(photoFlipCardView:thumbnailAtIndex:)]) {
-        flags.dataSourceThumbnailAtIndex = 1;
+        flags.dataSourceThumbnailAtIndex = YES;
     }
     if ([dataSource respondsToSelector:@selector(photoFlipCardView:imageAtIndex:)]) {
-        flags.dataSourceImageAtIndex = 1;
+        flags.dataSourceImageAtIndex = YES;
     }
 }
 
 - (void)setDelegate:(id)d {
     delegate = d;
+    if ([dataSource respondsToSelector:@selector(photoFlipCardView:didSelectThumnailAtIndex:)]) {
+        flags.delegateDidSelectThumnailAtIndex = YES;
+    }
 }
 
 - (UIEdgeInsets)contentInset {
@@ -77,7 +80,7 @@
 }
 
 - (void)photoFlipCardThumbnail:(PhotoFlipCardThumbnail *)photoFlipCardThumbnail didSelectThumnailAtIndex:(NSUInteger)index {
-    if ([delegate respondsToSelector:@selector(photoFlipCardView:didSelectThumnailAtIndex:)]) {
+    if (flags.delegateDidSelectThumnailAtIndex) {
         [delegate photoFlipCardView:self didSelectThumnailAtIndex:index];
     }
 }
