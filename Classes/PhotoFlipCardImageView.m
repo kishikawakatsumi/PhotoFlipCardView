@@ -30,7 +30,7 @@
 
 CGPoint midpointBetweenPoints(CGPoint a, CGPoint b);
 
-@interface PhotoImageView()
+@interface PhotoImageView(Private)
 - (void)handleSingleTap;
 - (void)handleDoubleTap;
 - (void)handleTwoFingerTap;
