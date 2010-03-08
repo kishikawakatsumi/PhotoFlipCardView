@@ -52,7 +52,7 @@
 - (void)setDelegate:(id)d {
     delegate = d;
     if ([dataSource respondsToSelector:@selector(photoFlipCardView:didSelectThumnailAtIndex:)]) {
-        flags.delegateDidSelectThumnailAtIndex = YES;
+        flags.delegateDidSelectThumbnailAtIndex = YES;
     }
 }
 
@@ -79,9 +79,9 @@
     return nil;
 }
 
-- (void)photoFlipCardThumbnail:(PhotoFlipCardThumbnail *)photoFlipCardThumbnail didSelectThumnailAtIndex:(NSUInteger)index {
-    if (flags.delegateDidSelectThumnailAtIndex) {
-        [delegate photoFlipCardView:self didSelectThumnailAtIndex:index];
+- (void)photoFlipCardThumbnail:(PhotoFlipCardThumbnail *)photoFlipCardThumbnail didSelectThumbnailAtIndex:(NSUInteger)index {
+    if (flags.delegateDidSelectThumbnailAtIndex) {
+        [delegate photoFlipCardView:self didSelectThumbnailAtIndex:index];
     }
 }
 

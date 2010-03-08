@@ -20,7 +20,7 @@
         unsigned int dataSourceNumberOfImages:1;
         unsigned int dataSourceThumbnailAtIndex:1;
         unsigned int dataSourceImageAtIndex:1;
-        unsigned int delegateDidSelectThumnailAtIndex:1;
+        unsigned int delegateDidSelectThumbnailAtIndex:1;
     } flags;
 }
 
@@ -40,5 +40,5 @@
 
 @protocol PhotoFlipCardViewDelegate
 @optional
-- (void)photoFlipCardView:(PhotoFlipCardView *)photoFlipCardView didSelectThumnailAtIndex:(NSUInteger)index;
+- (void)photoFlipCardView:(PhotoFlipCardView *)photoFlipCardView didSelectThumbnailAtIndex:(NSUInteger)index;
 @end
