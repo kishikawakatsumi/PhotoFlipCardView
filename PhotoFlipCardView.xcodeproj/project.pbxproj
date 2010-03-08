@@ -693,6 +693,14 @@
 				1D3623250D0F684500981E51 /* PhotoFlipCardViewAppDelegate.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				14B4C1CC1145968400FCFA91 /* PhotoFlipCardView */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		14B4C1CC1145968400FCFA91 /* PhotoFlipCardView */ = {
+			isa = PBXGroup;
+			children = (
 				14E957C91141BFC200F6CD3E /* PhotoFlipCardView.h */,
 				14E957CA1141BFC200F6CD3E /* PhotoFlipCardView.m */,
 				14E957D61141C25C00F6CD3E /* PhotoFlipCardThumbnail.h */,
@@ -700,7 +708,7 @@
 				14E957DB1141C41100F6CD3E /* PhotoFlipCardImageView.h */,
 				14E957DC1141C41100F6CD3E /* PhotoFlipCardImageView.m */,
 			);
-			path = Classes;
+			name = PhotoFlipCardView;
 			sourceTree = "<group>";
 		};
 		14E94FC91141BBAC00F6CD3E /* photos */ = {
