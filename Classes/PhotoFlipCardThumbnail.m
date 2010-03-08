@@ -75,10 +75,10 @@
     }
     fullImage = [[dataSource photoFlipCardThumbnail:self imageAtIndex:index] retain];
     
-    [self performSelector:@selector(flipThumViewToFullView:) withObject:thumbView afterDelay:0.2];
+    [self performSelector:@selector(flipThumbViewToFullView:) withObject:thumbView afterDelay:0.2];
 }
 
-- (void)flipThumViewToFullView:(UIView *)thumbView {
+- (void)flipThumbViewToFullView:(UIView *)thumbView {
     PhotoFlipCardImageView *fullView = [[PhotoFlipCardImageView alloc] initWithFrame:self.window.frame];
     fullView.delegate = self;
     fullView.contentMode = UIViewContentModeScaleAspectFit;
