@@ -13,6 +13,8 @@
 #define THUMBNAIL_HIGHT 75.0f
 #define THUMBNAIL_MARGIN 4.0f
 
+#define ANIMATION_DURATION 0.5
+
 @implementation PhotoFlipCardThumbnail
 
 @synthesize delegate;
@@ -86,7 +88,7 @@
     [fullImage release];
     
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDuration:ANIMATION_DURATION];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:thumbView cache:YES];
     thumbView.frame = fullView.frame;
@@ -104,7 +106,7 @@
     UIView *thumbView = photoFlipCardImageView.superview;
     
     [UIView beginAnimations:nil context:thumbView];
-    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDuration:ANIMATION_DURATION];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:thumbView cache:YES];
     [UIView setAnimationDelegate:self];
