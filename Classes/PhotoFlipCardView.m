@@ -38,22 +38,14 @@
 
 - (void)setDataSource:(id)d {
     dataSource = d;
-    if ([dataSource respondsToSelector:@selector(photoFlipCardViewNumberOfImages:)]) {
-        flags.dataSourceNumberOfImages = YES;
-    }
-    if ([dataSource respondsToSelector:@selector(photoFlipCardView:thumbnailAtIndex:)]) {
-        flags.dataSourceThumbnailAtIndex = YES;
-    }
-    if ([dataSource respondsToSelector:@selector(photoFlipCardView:imageAtIndex:)]) {
-        flags.dataSourceImageAtIndex = YES;
-    }
+    flags.dataSourceNumberOfImages = [dataSource respondsToSelector:@selector(photoFlipCardViewNumberOfImages:)];
+    flags.dataSourceThumbnailAtIndex = [dataSource respondsToSelector:@selector(photoFlipCardView:thumbnailAtIndex:)];
+    flags.dataSourceImageAtIndex = [dataSource respondsToSelector:@selector(photoFlipCardView:imageAtIndex:)];
 }
 
 - (void)setDelegate:(id)d {
     delegate = d;
-    if ([dataSource respondsToSelector:@selector(photoFlipCardView:didSelectThumnailAtIndex:)]) {
-        flags.delegateDidSelectThumbnailAtIndex = YES;
-    }
+    flags.delegateDidSelectThumbnailAtIndex = [dataSource respondsToSelector:@selector(photoFlipCardView:didSelectThumnailAtIndex:)];
 }
 
 - (UIEdgeInsets)contentInset {
